@@ -39,6 +39,7 @@
    <script src="scripts/controllers/main.js"></script>
    <script src="scripts/controllers/noty.js"></script>
    <script src="scripts/controllers/screensaver.js"></script>
+   <script src="https://antistorm.eu/api/widgetV1/astorm-mapWidgetV1.js"></script>
 </head>
 
 <body ng-controller="Main" ng-class="getBodyClass()">
@@ -1055,6 +1056,20 @@
    </div>
 </script>
 
+<div id="widgetContainer" class="antistorm-widgetContainer" style="width:400px; height:400px; border:5px #eeeeee solid">
+<div class="antistorm-mainMapContainer"><div class="antistorm-divStack"></div></div>
+<a href="http://antistorm.eu" target="_blank"><div class="antistorm-legend"></div></a>
+</div>
+
+<script>
+var mapWidget = new AstormMapWidgetV1();
+mapWidget.widgetID = "widgetContainer";
+mapWidget.modality = "radar";
+mapWidget.excluded = ["estofex"];
+mapWidget.centerPoint = {lat: 52.24, lng: 21.1};
+mapWidget.zoom = 4;
+mapWidget.init();
+</script>
 
 
 <link rel="stylesheet" async
